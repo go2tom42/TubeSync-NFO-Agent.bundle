@@ -19,7 +19,7 @@ Seasons are broken in to years, you can add posters for seasons, just drop the i
 
 Series/Show posters need to be called `show.jpg`*  
 
-\* images extention can be any of the following ".jpg", ".jpeg", ".webp", ".png", ".tiff", ".gif", ".jp2"  
+\* images extention formats that should work are the following ".jpg", ".jpeg", ".webp", ".png", ".tiff", ".gif", ".jp2"  
 
 All NFO tags come from youtube's info on the video except the `showtitle` tag, the NFO gets that tag from the NAME you gave the source inside tubesync
 

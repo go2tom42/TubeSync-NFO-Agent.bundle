@@ -44,7 +44,6 @@ This works for my needs and I don't have a clue what I'm doing so if you have an
 
 ## Thanks to...
 
-**[meeb](https://github.com/meeb)** - for creating [tubesync](https://github.com/meeb/tubesync)
-
+**[meeb](https://github.com/meeb)** - for creating [tubesync](https://github.com/meeb/tubesync)  
 **[ZeroQI](https://github.com/ZeroQI)** - ZeroQI created the original Youtube Agent, the Absolute Series Scanner which this agent also uses and he has a bunch of helpful posts on the Plex forums.  
 **[mcinj](https://github.com/mcinj)** - for adding NFO support to [Youtube-DL-Agent.bundle](https://github.com/JordyAlkema/Youtube-DL-Agent.bundle)

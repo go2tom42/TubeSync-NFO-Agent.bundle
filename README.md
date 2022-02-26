@@ -4,22 +4,22 @@ I started with [Youtube-DL-Agent.bundle](https://github.com/JordyAlkema/Youtube-
 
 ## What does this agent do?
 
-It uses NFO files from generated from [tubesync](https://github.com/meeb/tubesync)
-From the NFO it sets the following in Plex
-Show Title is the `showtitle` tag
-Show Studio is the `studio` tag
-Show Summary is "`showtitle `tag" + " by " + "`studio` tag"
+It uses NFO files from generated from [tubesync](https://github.com/meeb/tubesync)  
+From the NFO it sets the following in Plex  
+Show Title is the `showtitle` tag  
+Show Studio is the `studio` tag  
+Show Summary is "`showtitle `tag" + " by " + "`studio` tag"  
 
-Episode Title is the `title` tag
-Episode Summary is the `plot` tag
-Episode "RELEASED" date is the `aired` tag
-Episode Directory is the `studio` tag
+Episode Title is the `title` tag  
+Episode Summary is the `plot` tag  
+Episode "RELEASED" date is the `aired` tag  
+Episode Directory is the `studio` tag  
 
-Seasons are broken in to years, you can add posters for seasons, just drop the image in the folder with the videos (`Season2018.jpg`)*
+Seasons are broken in to years, you can add posters for seasons, just drop the image in the folder with the videos (`Season2018.jpg`)*  
 
-Series/Show posters need to be called `show.jpg`*
+Series/Show posters need to be called `show.jpg`*  
 
-\* images extention can be any of the following ".jpg", ".jpeg", ".webp", ".png", ".tiff", ".gif", ".jp2"
+\* images extention can be any of the following ".jpg", ".jpeg", ".webp", ".png", ".tiff", ".gif", ".jp2"  
 
 All NFO tags come from youtube's info on the video except the `showtitle` tag, the NFO gets that tag from the NAME you gave the source inside tubesync
 

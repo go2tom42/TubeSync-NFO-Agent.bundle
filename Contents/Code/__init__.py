@@ -9,9 +9,9 @@ import xml.etree.ElementTree as ET
 def Start():
     Log("Starting up ...")
 
-class YoutubeDLAgent(Agent.TV_Shows):
+class TubeSyncNFOAgent(Agent.TV_Shows):
     name, primary_provider, fallback_agent, contributes_to, languages, accepts_from = (
-    'TubeSync-NFO', True, False, None, [Locale.Language.English, ], None)
+    'TubeSync-NFO', True, False, None, [Locale.Language.English], ['com.plexapp.agents.localmedia'])
 
     def search(self, results, media, lang, manual=False):
         results.Append(MetadataSearchResult(
@@ -50,7 +50,7 @@ class YoutubeDLAgent(Agent.TV_Shows):
                             continue
                         metadata.title = root.findtext('.//showtitle')
                         metadata.studio = root.findtext('.//studio')
-                        metadata.summary = root.findtext('.//showtitle')
+                        metadata.summary = root.findtext('.//showtitle') + " by " + root.findtext('.//studio')
 
                         break
                 except IOError:

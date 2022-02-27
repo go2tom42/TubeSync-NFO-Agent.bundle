@@ -2,6 +2,8 @@
 
 I started with [Youtube-DL-Agent.bundle](https://github.com/JordyAlkema/Youtube-DL-Agent.bundle), then I butched and hacked it to my will.  Along the way I used [mcinj's](https://github.com/mcinj) [work](https://github.com/mcinj/Youtube-DL-Agent.bundle/tree/tubesync_xml?rgh-link-date=2022-02-01T01%3A24%3A38Z), then added more localmedia support
 
+I use `{source_full} - {yyyy_mm_dd} - [{key}] - {resolution}.{ext}` and the file name in TubeSync
+
 ## What does this agent do?
 
 It uses NFO files from generated from [tubesync](https://github.com/meeb/tubesync)  

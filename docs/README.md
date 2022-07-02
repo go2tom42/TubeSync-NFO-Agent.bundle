@@ -9,7 +9,7 @@ Requirements:
 I run everything through Docker using **[caddy-docker-proxy](https://github.com/lucaslorentz/caddy-docker-proxy)** for ssl, this is my config for [TubeSync](https://github.com/meeb/tubesync), drop the **network** &amp; **labels** sections if you run a different proxy-
 
       tubesync:
-        image: ghcr.io/meeb/tubesync:latest
+        image: ghcr.io/meeb/tubesync:v0.11.0
         container_name: tubesync
         restart: unless-stopped
         ports:

@@ -34,7 +34,7 @@ I run everything through Docker using **[caddy-docker-proxy](https://github.com/
 
 The two "NOT Required" entries are because I wanted larger thumbnails and to change the default settings for new video sources
 
-For the models.py file I changed. Currently lines 237-300 in hash 5bf53b3 (current as of 3-14-22)
+For the models.py file I changed. Currently lines 273-300 in hash 538b3cb (current as of 7-2-22)
 
     prefer_60fps = models.BooleanField(
         _('prefer 60fps'),
@@ -65,14 +65,14 @@ For the models.py file I changed. Currently lines 237-300 in hash 5bf53b3 (curre
         help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers')
     )
 
-For settings.py I changed. Currently lines 148-149 in hash 5bf53b3 (current as of 3-14-22)
+For settings.py I changed. Currently lines 148-149 in hash 67a3998 (current as of 7-2-22)
 
     
     MEDIA_THUMBNAIL_WIDTH = 1280                 # Width in pixels to resize thumbnails to
     MEDIA_THUMBNAIL_HEIGHT = 720                # Height in pixels to resize thumbnails to
 
 
-AND Currently line167 in hash 5bf53b3 (current as of 3-14-22)
+AND Currently line 167 in hash 67a3998 (current as of 7-2-22)
 
     MEDIA_FORMATSTR_DEFAULT = '{source_full} - {yyyy_mm_dd} - [{key}] - {resolution}.{ext}'
 

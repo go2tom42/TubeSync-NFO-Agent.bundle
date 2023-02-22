@@ -9,7 +9,7 @@ Requirements:
 I run everything through Docker using **[caddy-docker-proxy](https://github.com/lucaslorentz/caddy-docker-proxy)** for ssl, this is my config for [TubeSync](https://github.com/meeb/tubesync), drop the **network** &amp; **labels** sections if you run a different proxy-
 
       tubesync:
-        image: ghcr.io/meeb/tubesync:v0.11.0
+        image: ghcr.io/meeb/tubesync:@sha256:9b0f8e608a012db0fe66139b92717c50fe51db134ee1302d4efc13a137bf90fd
         container_name: tubesync
         restart: unless-stopped
         ports:
@@ -34,7 +34,7 @@ I run everything through Docker using **[caddy-docker-proxy](https://github.com/
 
 The two "NOT Required" entries are because I wanted larger thumbnails and to change the default settings for new video sources
 
-For the models.py file I changed. Currently lines 273-300 in hash 538b3cb (current as of 7-2-22)
+For the models.py file I changed. Currently lines 313-340 in hash 4f6af70 (current as of 2-22-23)
 
     prefer_60fps = models.BooleanField(
         _('prefer 60fps'),
@@ -65,14 +65,14 @@ For the models.py file I changed. Currently lines 273-300 in hash 538b3cb (curre
         help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers')
     )
 
-For settings.py I changed. Currently lines 148-149 in hash 67a3998 (current as of 7-2-22)
+For settings.py I changed. Currently lines 148-149 in hash 4f6af70 (current as of 2-22-23)
 
     
     MEDIA_THUMBNAIL_WIDTH = 1280                 # Width in pixels to resize thumbnails to
     MEDIA_THUMBNAIL_HEIGHT = 720                # Height in pixels to resize thumbnails to
 
 
-AND Currently line 167 in hash 67a3998 (current as of 7-2-22)
+AND Currently line 167 in hash 4f6af70 (current as of 2-22-23)
 
     MEDIA_FORMATSTR_DEFAULT = '{source_full} - {yyyy_mm_dd} - [{key}] - {resolution}.{ext}'
 

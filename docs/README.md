@@ -8,33 +8,30 @@ Requirements:
 
 I run everything through Docker using **[caddy-docker-proxy](https://github.com/lucaslorentz/caddy-docker-proxy)** for ssl, this is my config for [TubeSync](https://github.com/meeb/tubesync), drop the **network** &amp; **labels** sections if you run a different proxy-
 
-      tubesync:
-        image: ghcr.io/meeb/tubesync:@sha256:9b0f8e608a012db0fe66139b92717c50fe51db134ee1302d4efc13a137bf90fd
-        container_name: tubesync
-        restart: unless-stopped
-        ports:
-          - 4848:4848
-        volumes:
-          - /docker/configs/tubesync/models.py:/app/sync/models.py #NOT Required
-          - /docker/configs/tubesync/settings.py:/app/tubesync/settings.py #NOT Required
-          - /docker/configs/tubesync:/config
-          - /nas/Videos/YouTube:/downloads/video
-        environment:
-          - TUBESYNC_WORKERS=8
-          - TZ=Europe/London
-          - PUID=1000
-          - PGID=1000
-        networks:
-          - caddy
-        labels:
-          caddy: tubesync.XXXXX.pw
-          caddy.reverse_proxy: "{{upstreams 4848}}"
-          caddy.tls: "internal"
-
+        tubesync:
+          image: ghcr.io/meeb/tubesync
+          container_name: tubesync
+          restart: unless-stopped
+          volumes:
+            - /home/tom42/docker/configs/tubesync/models.py:/app/sync/models.py
+            - /home/tom42/docker/configs/tubesync/settings.py:/app/tubesync/settings.py
+            - /home/tom42/docker/configs/tubesync:/config
+            - /media/nas/Videos/YouTube:/downloads/video
+          environment:
+            - TUBESYNC_WORKERS=8
+            - TZ=Europe/London
+            - PUID=1000
+            - PGID=1000
+          networks:
+            - dockge_default
+          ports:
+            - 4848:4848
+      networks:
+        dockge_default:
 
 The two "NOT Required" entries are because I wanted larger thumbnails and to change the default settings for new video sources
 
-For the models.py file I changed. Currently lines 313-340 in hash 4f6af70 (current as of 2-22-23)
+For the models.py file I changed. Currently lines 252-284 (current as of 4-29-25)
 
     prefer_60fps = models.BooleanField(
         _('prefer 60fps'),
@@ -65,14 +62,14 @@ For the models.py file I changed. Currently lines 313-340 in hash 4f6af70 (curre
         help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers')
     )
 
-For settings.py I changed. Currently lines 148-149 in hash 4f6af70 (current as of 2-22-23)
+For settings.py I changed. Currently lines 151-152 (current as of 4-29-25)
 
     
     MEDIA_THUMBNAIL_WIDTH = 1280                 # Width in pixels to resize thumbnails to
     MEDIA_THUMBNAIL_HEIGHT = 720                # Height in pixels to resize thumbnails to
 
 
-AND Currently line 167 in hash 4f6af70 (current as of 2-22-23)
+AND Currently line 180  (current as of 4-29-25)
 
     MEDIA_FORMATSTR_DEFAULT = '{source_full} - {yyyy_mm_dd} - [{key}] - {resolution}.{ext}'
 

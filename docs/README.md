@@ -31,7 +31,7 @@ I run everything through Docker using **[caddy-docker-proxy](https://github.com/
 
 The two "NOT Required" entries are because I wanted larger thumbnails and to change the default settings for new video sources
 
-For the models.py file I changed. Currently lines 252-284 (current as of 4-29-25)
+For the models.py file I changed. Currently lines 269-301 (current as of 4-29-25)
 
     prefer_60fps = models.BooleanField(
         _('prefer 60fps'),
@@ -50,6 +50,11 @@ For the models.py file I changed. Currently lines 252-284 (current as of 4-29-25
         choices=FALLBACK_CHOICES,
         default=FALLBACK_NEXT_BEST,
         help_text=_('What do do when media in your source resolution and codecs is not available')
+    )
+    copy_channel_images = models.BooleanField(
+        _('copy channel images'),
+        default=False,
+        help_text=_('Copy channel banner and avatar. These may be detected and used by some media servers')
     )
     copy_thumbnails = models.BooleanField(
         _('copy thumbnails'),

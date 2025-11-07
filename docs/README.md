@@ -31,7 +31,7 @@ I run everything through Docker using **[caddy-docker-proxy](https://github.com/
 
 The two "NOT Required" entries are because I wanted larger thumbnails and to change the default settings for new video sources
 
-For the models.py file I changed. Currently lines 269-301 (current as of 4-29-25)
+For the tubesync\sync\models\source.py file I changed. Currently lines 238-270 (current as of 11-07-25)
 
     prefer_60fps = models.BooleanField(
         _('prefer 60fps'),
@@ -67,14 +67,14 @@ For the models.py file I changed. Currently lines 269-301 (current as of 4-29-25
         help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers')
     )
 
-For settings.py I changed. Currently lines 151-152 (current as of 4-29-25)
+For tubesync\tubesync\settings.py I changed. Currently lines 177-178 (current as of 11-7-25)
 
     
     MEDIA_THUMBNAIL_WIDTH = 1280                 # Width in pixels to resize thumbnails to
     MEDIA_THUMBNAIL_HEIGHT = 720                # Height in pixels to resize thumbnails to
 
 
-AND Currently line 180  (current as of 4-29-25)
+AND Currently line 220  (current as of 11-7-25)
 
     MEDIA_FORMATSTR_DEFAULT = '{source_full} - {yyyy_mm_dd} - [{key}] - {resolution}.{ext}'
 

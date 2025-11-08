@@ -33,38 +33,38 @@ The two "NOT Required" entries are because I wanted larger thumbnails and to cha
 
 For the tubesync\sync\models\source.py file I changed. Currently lines 238-270 (current as of 11-07-25)
 
-    prefer_60fps = models.BooleanField(
+    prefer_60fps = db.models.BooleanField(
         _('prefer 60fps'),
         default=False,
-        help_text=_('Where possible, prefer 60fps media for this source')
+        help_text=_('Where possible, prefer 60fps media for this source'),
     )
-    prefer_hdr = models.BooleanField(
+    prefer_hdr = db.models.BooleanField(
         _('prefer hdr'),
-        default=True,
-        help_text=_('Where possible, prefer HDR media for this source')
+        default=False,
+        help_text=_('Where possible, prefer HDR media for this source'),
     )
-    fallback = models.CharField(
+    fallback = db.models.CharField(
         _('fallback'),
         max_length=1,
         db_index=True,
-        choices=FALLBACK_CHOICES,
-        default=FALLBACK_NEXT_BEST,
-        help_text=_('What do do when media in your source resolution and codecs is not available')
+        choices=Fallback.choices,
+        default=Fallback.NEXT_BEST_HD,
+        help_text=_('What do do when media in your source resolution and codecs is not available'),
     )
-    copy_channel_images = models.BooleanField(
+    copy_channel_images = db.models.BooleanField(
         _('copy channel images'),
         default=False,
-        help_text=_('Copy channel banner and avatar. These may be detected and used by some media servers')
+        help_text=_('Copy channel banner and avatar. These may be detected and used by some media servers'),
     )
-    copy_thumbnails = models.BooleanField(
+    copy_thumbnails = db.models.BooleanField(
         _('copy thumbnails'),
         default=True,
-        help_text=_('Copy thumbnails with the media, these may be detected and used by some media servers')
+        help_text=_('Copy thumbnails with the media, these may be detected and used by some media servers'),
     )
-    write_nfo = models.BooleanField(
+    write_nfo = db.models.BooleanField(
         _('write nfo'),
         default=True,
-        help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers')
+        help_text=_('Write an NFO file in XML with the media info, these may be detected and used by some media servers'),
     )
 
 For tubesync\tubesync\settings.py I changed. Currently lines 177-178 (current as of 11-7-25)
